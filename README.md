@@ -1,51 +1,102 @@
-# 인강헬퍼, IngangHelper
-
-**기술 스택** ㅡ Next.js, Typescript, React-query, sass  
-
-**담당 파트** ㅡ FrontEnd, Design(Figma)  
-
-**주요 작업** ㅡ 어드민, 헬퍼, 학생 유저에 대한 전반적인 프론트 업무
+<div align="center">
   
-<br>
-<br>
+<img src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/b13cdb0b-0659-4ea4-a9cc-82435d79a331.png" />  
 
-|**일부 작업 VIEW**||
-|------|------|
-|**HOME**|**Home (헬퍼 찾기)**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/681e3267-8341-4a51-aa77-070d8a44ba5c.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/54879cfe-e3d7-43f4-9ee9-be6e0d44f6c1.png" width="100%" height="20%"/>|
-|**mobile 채팅1**|**mobile 채팅2**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/54ec84fb-bf89-45ec-bb8b-34d6c9b177bb.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/2da788e4-1960-4d5c-8572-be1dba25967d.png" width="100%" height="20%"/>|
-|**mobile 채팅3**|**pc 채팅1 - 첫 화면**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/112387c8-831a-4ccf-bd01-16041194d1d0.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/bf1f6d2e-0320-402e-8d09-f918d9385658.png" width="100%" height="20%"/>|
-|**pc 채팅2 - 학생측**|**pc 채팅3 - 헬퍼측**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/db4346f7-b6b1-4bbb-bba0-801d485bc64f.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/6d8bcf9b-9167-4d43-8eda-8a815362210d.png" width="100%" height="20%"/>|
-|**pc 채팅4 - 상용구**|**pc 채팅5 - 시간표**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/632aba39-afa5-4aa9-91be-12801b474db6.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/88efa69c-c7ed-448c-ac20-2d230517d167.png" width="100%" height="20%"/>|
-|**강의실 관리**|**헬퍼 프로필**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/bd69f16e-a599-4ecd-8144-67ec3285beba.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/54f5514f-9962-4d7c-ab35-a3d345c5f996.png" width="100%" height="20%"/>|
-|**프로필 심사1 - 목록**|**프로필 심사2 - 개인 상세1**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/4bf829aa-7813-4af0-8fb2-e5b27ed94448.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/ad922ef4-18e7-4aab-91b9-6ea147d857cc.png" width="100%" height="20%"/>|
-|**프로필 심사3 - 개인 상세2**|**프로필 심사4 - 개인 상세3**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/88544268-1dc6-4758-b2b5-502a42990981.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/b4cdd04e-d52b-47b0-ad00-f7c06edb229d.png" width="100%" height="20%"/>|
-|**프로필 심사5 - 반려**|**학생 - 내 수업 출결**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/93bae4ed-0ef8-4ebd-b0c1-3c82dc24f3fb.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/8bd20ccb-7568-47c4-91cd-896d0ef89e61.png" width="100%" height="20%"/>|
-|**학생 - 수업 목록**|**학생 - 수업 신청**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/d94fb168-8b81-4e00-b30f-787efc0fe27d.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/0f439c45-78cf-4d02-a3a4-067c51bc8072.png" width="100%" height="20%"/>|
-|**코인 충전**|**코인 사용 기록 조회**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/aeaae402-88b1-46dc-a7aa-939f358237c5.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/d1ba1a47-c099-4a14-a8be-c5b291face2c.png" width="100%" height="20%"/>|
-|**학생 프로필 - 상**|**학생 프로필 - 하**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/f4159341-1e3e-4199-b0c7-5f682da7344b.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/912ec77e-65d9-47f4-9522-932decbe6092.png" width="100%" height="20%"/>|
-|**헬퍼 검색**|**mobile 헬퍼 목록**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/9bf9b200-9bb3-4885-93f3-94f94d390d6c.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/aaf9c095-c930-4219-b21c-57e66d92cc84.png" width="100%" height="20%"/>|
-|**헬퍼 정보 - 상**|**헬퍼 정보 - 하**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/b9ed934b-f4c7-4cbd-a929-bea4527f5f1d.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/3c9a3bae-8990-429b-8459-4abdb76be8b4.png" width="100%" height="20%"/>|
-|**헬퍼 - 내 학생 출결**|**헬퍼 - 수업 심사 신청1**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/bbfbc5b3-9023-4ebf-854d-09fc96fef845.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/25b33205-0d9f-417a-aea9-7c63face937f.png" width="100%" height="20%"/>|
-|**헬퍼 - 수업 심사 신청2**|**헬퍼 - 수업 심사 신청3**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/166c44c1-0841-4474-8273-790b711df7db.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/7c000667-7cd3-49c0-a082-b54c9b0700cc.png" width="100%" height="20%"/>|
-|**헬퍼 - 수업 심사 신청4**|**총 학생 목록 조회**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/728782a4-6c1c-4957-a235-0fbf47399776.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/764d6c1c-3c35-4f15-8cb4-86ec5df68859.png" width="100%" height="20%"/>|
-|**헬퍼 - 수업 출결, 시간 변경, 보충 수업**|**My 페이지**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/5f959bbc-13d3-4ec0-b84f-9df8ea71b95d.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/4b6fb737-2e76-4d66-984f-8322e270d767.png" width="100%" height="20%"/>|
-|**헬퍼 - 온보딩1**|**헬퍼 - 온보딩2**|
-|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/86184c2e-e047-4cbf-9c8c-2c17ad24d18c.png" width="100%" height="20%"/>|<img src="https://github.com/Taeyeon-Lim/Hey-Vote/assets/54977412/bf1b08e1-ecf4-43d4-a7e3-dcf23e0e67cc.png" width="100%" height="20%"/>|
+# 인강헬퍼 (IngangHelper)
+<img src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/77fbed11-14a1-4492-a330-8eecab5dbc39" />
+
+</div>
+
+<br>
+<br>  
+
+## OverView
+<table>
+  <tr>
+    <td> HOME </td>
+    <td> Home - 헬퍼 찾기 </td>
+    <td> 채팅 - 첫 화면 (PC) </td>
+    <td> 채팅 - 학생 (PC) </td>
+    <td> 채팅 - 헬퍼 (PC) </td>
+    <td> 채팅 - 상용구 메시지 (PC) </td>
+    <td> 채팅 - 시간표 (PC) </td>
+    <td> 강의실 관리 </td>
+    <td> 총 학생 관리 (헬퍼) </td>
+    <td> 내 학생 정보 (헬퍼) </td>
+    <td> 정규 수업 관리 (헬퍼) </td>
+    <td> 수업 프로필 1 </td>
+    <td> 수업 프로필 2 </td>
+    <td> 수업 프로필 3 </td>
+    <td> 수업 프로필 4 </td>
+    <td> 헬퍼 정보 1 </td>
+    <td> 헬퍼 정보 2 </td>
+    <td> 수업 신청 (학생) </td>
+    <td> 수업 목록 (학생) </td>
+    <td> 내 수업 (학생) </td>
+    <td> 수업료 충전 </td>
+    <td> 사용 내역 </td>
+    <td> 수업 심사 - 목록 </td>
+    <td> 수업 심사 - 상단 </td>
+    <td> 수업 심사 - 하단 A </td>
+    <td> 수업 심사 - 하단 B </td>
+    <td> 수업 심사 - 반려 </td>
+  </tr>
+  <tr>
+    <td> <img width="300" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/29b5b26d-e14f-4a6b-a995-128bb0c6f331" /> </td> 
+    <td> <img width="505" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/4e73fd3a-cdc3-4244-9521-7bcf3166820c" /> </td> 
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/f1eb81f4-0baf-407f-a859-b6d8e3dc7d96" /> </td> 
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/c4a2ed4c-095c-4ffe-9760-f043513435e6" /> </td> 
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/acc3eeac-ad44-41a7-9181-aa98833a366f" /> </td> 
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/2890c0c6-ac52-496d-860c-3387af06991f" /> </td> 
+    <td> <img width="620" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/c7823126-ae86-4669-8c33-e53a9dd498ec" /> </td>
+    <td> <img width="540" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/12117be3-e1b1-4dda-a955-d6e151f32b13" /> </td>
+    <td> <img width="700" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/f6e2ee51-bed0-442a-9354-f7f749fd0463" /> </td>
+    <td> <img width="600" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/7bd464ae-3a3a-4682-af23-dbeec03be9da" /> </td>
+    <td> <img width="620" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/61488709-bc2d-40a5-94ed-46371b8e916d" /> </td>
+    <td> <img width="555" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/7a91bf68-55df-433a-bfaf-ca19cebadc4b" /> </td>
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/4d6a557e-7559-4aa7-98ea-756da1b94734" /> </td>
+    <td> <img width="770" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/c823ead3-fe2c-40e0-a809-57b6d83ff2c9" /> </td>
+    <td> <img width="855" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/5f17925a-e1a0-47d2-a2b5-899deeba692e" /> </td>
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/6e366f01-b488-455d-a9e2-b661febf6cfe" /> </td>
+    <td> <img width="535" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/4d5f3a29-2425-4312-afe8-338d5ee3ab1c" /> </td>
+    <td> <img width="630" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/5354e01e-fd7f-45c1-8a8e-d9165186af83" /> </td>
+    <td> <img width="420" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/acdf430b-1611-472d-a1c2-398ff21de450" /> </td>
+    <td> <img width="630" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/0556bbfd-07a9-4f20-b559-b210eb989faf" /> </td>
+    <td> <img width="655" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/05032405-0ec9-445f-996a-4ff316d75485" /> </td>
+    <td> <img width="555" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/96e8cd2a-b908-4bc2-b383-cb7eace0533e" /> </td>
+    <td> <img width="920" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/312443f6-fefb-420a-b7f5-1ee4e360fc3c" /> </td>
+    <td> <img width="665" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/d5c221d2-8875-4c1a-81b8-29b5f43532a1" /> </td> 
+    <td> <img width="660" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/a2280730-d2eb-46b9-b38f-545ce66b42b9" /> </td>
+    <td> <img width="690" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/bed2dd27-75b8-4db2-a58f-b4992269a06d" /> </td>
+    <td> <img width="795" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/77d1acb8-707f-46c5-9c20-a1f2034dd1b9" /> </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td> 헬퍼 목록 (mobile) </td>
+    <td> 채팅 목록 (mobile) </td>
+    <td> 채팅방 (mobile) </td>
+    <td> 채팅 상대 (mobile) </td>
+    <td> 헬퍼 가이드 1 </td>
+    <td> 헬퍼 가이드 2 </td>
+    <td> My </td>
+    <td> 학생 프로필 1 </td>
+    <td> 학생 프로필 2 </td>
+    <td> 헬퍼 프로필 </td>
+    <td> 헬퍼 검색 </td>
+  </tr>
+  <tr> 
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/0d8f3eaa-2cca-4eb5-8401-96736198923d" /> </td>
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/125b9c6f-7c50-4dc9-b127-96f58e207be3" /> </td>
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/ca1e174f-ac83-4d1d-a983-eb4058efd783" /> </td>
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/f465ee22-2051-499d-bcb3-69bc91f38834" /> </td>
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/563b1f23-1c5f-4e38-afb4-c732e8cfb0ae" /> </td>
+    <td> <img width="240" height="500" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/5252fe4d-f446-4272-bf68-4e6fac761e53" /> </td>
+    <td> <img width="245" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/ff6ef62d-963c-4e29-a9be-50b8b98c80f5" /> </td>
+    <td> <img width="300" height="360" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/939e9b6a-d19d-44ca-b74a-d73ee7fb306f" /> </td>
+    <td> <img width="320" height="360" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/a51b3bfe-3cdb-40e3-8108-3ebe0cc94efe" /> </td>
+    <td> <img width="335" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/a9755912-76e0-400f-8454-490a50fb1f82" /> </td>  
+    <td> <img width="306" src="https://github.com/Taeyeon-Lim/IngangHelper/assets/54977412/82739857-019d-4b76-aa74-a57dbc24af84" /> </td>  
+  </tr>
+</table> 
