@@ -653,8 +653,12 @@ body {
 다른 지표도 중요할 수 있지만, 많은 개발자들은 LCP는 웹에서 중요한 지표 중 하나라고 생각합니다. 그리고 이 LCP는 이미지 최적화에 영향을 많이 받는다고 생각했습니다.    
 보통 유저가 웹 사이트에 진입할 때 이미지와 html, css, js를 다운받기 때문에 시간이 오래걸립니다.   
 특히, 첫 진입에서 배너나 큰 이미지가 있는 경우 캐시되어 있지 않기 더욱 지연됩니다.   
-저의 경험에서 DOM 로드되는 시간은 0.5초 이내가 가장 좋고, 보통 1초 이내, 늦어도 1.5 ~ 2.5초 였습니다.    
+저의 경험에서 DOM 로드되는 시간은 0.5초 이내가 가장 좋고, 보통 1초 이내, 늦어도 1.5 ~ 2초 였습니다.    
 
+![웹 로딩 속도 기준](https://github.com/user-attachments/assets/865f52bd-fc07-41a7-8068-0ba4ba3671c5)
+
+<br/>
+   
 `인강헬퍼`의 첫 화면은 다음과 같았습니다.      
 
 ![배너 분석](https://github.com/user-attachments/assets/2a09dfa6-6d28-4551-8d2e-1107ec3a8734)
@@ -747,3 +751,83 @@ export default async function handler(
 이렇게 Api router로 운영자가 사용할 수 있도록 페이지를 초기화 시킬 수 있는 버튼을 만들거나, 배너 이미지를 추가/삭제할 때 자동으로 업데이트하게 할 수 있었습니다.    
 최종적으로 페이지 로드 속도 100~250ms로 줄었습니다.
 
+---
+
+## `인강헬퍼` 회고
+
+규모가 크지 않아서 그런지 운영에 큰 문제는 없었지만, 돌이켜보면 아쉬운 점도 잘한 점도 있었습니다.   
+
+그 항목은 다음과 같았습니다:
+- react-query의 queryKey 관리
+- 테스트
+- 기기별 프로젝트 분리
+- CSS-in-js vs CSS
+- 유저 반응
+
+   
+### react-query의 queryKey 관리
+
+react-query를 이용하면서, queryKey의 관리에 어려움을 겪었습니다. queryKey가 점점 많아지면서 데이터의 캐시 관리가 힘들어졌기 때문입니다. 잦은 데이터 요청이 예상되는 페이지에서 최대한 요청을 보내지 않기 위해, 몇몇 useQuery에서 제공하는 refetch 옵션을 false로 설정했습니다.   
+이 때문에, 옵션이 비활성화된 곳에서 사용되는 데이터의 queryKey를 수동으로 조작했고 문제가 생겼습니다.
+
+![queryKey 관리 어려움](https://github.com/user-attachments/assets/7abad936-de5a-4958-b71d-4b1b613545b2)
+
+C사탕이 포함된 데이터가 많다면?:
+- ‘사탕’ 목록 > queryKey: ['유저', '사탕 목록']
+- ‘C사탕’ 판매 예약 목록 > queryKey: ['유저', '사탕', 'C', '예약 목록']
+- ‘C사탕’ 판매 예약일 변경 > queryKey: ['유저', '사탕', 'C', '예약', 'A']
+- ......
+
+__=> Invalidate할 모든 queryKey를 알아야 합니다__
+
+유지/보수할 때에도 세부적인 queryKey를 관리하기 점점 어려워지기 때문에, 휴먼 에러도 빈번해질 가능성이 높았습니다. 당시 시간에 쫒긴 나머지 수동으로 조작하는 것에 대해 가볍게 생각했지만, 지금 생각해보면 react-query의 auto fetching 옵션 중 하나를 비활성화했기 때문에 다른 문제가 생길 여지가 있는 것은 필연이었을지도 모르겠습니다.   
+특히, `인강헬퍼`에서는 수업 시간에 관련한 queryKey 관리가 문제였습니다. 하나의 주제에 관련한 queryKey는 `query key factory`처럼 한 곳에서 관리했으면, 수업 시간 queryKey를 유지/보수할 때 더 편했을 것 같습니다. 
+
+<details>
+ <summary>예시) Query Key Factory</summary>
+  
+```ts
+// 사탕에 관련된 키 관리
+const candyKeys = {
+  all: ['candy'] as const,
+  lists: () => [...candyKeys.all, 'list'] as const,
+  list: (filters: string) => [...candyKeys.lists(), { filters }] as const,
+  details: () => [...candyKeys.all, 'detail'] as const,
+  detail: (id: number) => [...candyKeys.details(), id] as const,
+}
+
+// 사용할 때
+useQuery({ queryKey: candyKeys.all, ...... });
+queryClient.invalidateQueries(candyKeys.detail(candyId));
+```
+
+</details>
+
+### 테스트
+
+`인강헬퍼`를 진행하면서 Jest나 react-testing-library 테스트 코드를 작성해보지 못 한 것이 아쉬웠습니다. 중요한 부분에서 테스트 코드를 작성해서 무결성을 얻었으면 좋았을 것 같습니다.
+
+### 기기별 프로젝트 분리
+
+기획에 따라 `인강헬퍼`를 구현하면서, 기기 타입과 함께 반응형으로 진행했습니다. 기기 구별은 userAgent를 사용하였는데 개발 편의로 하나의 프로젝트로 구성했지만, 지금 생각해보면 큰 랩퍼 앱 속에 개별 앱으로 분리 구현하여 만들었으면 좋았을 거라는 생각이 들었습니다.   
+
+![인강헬퍼 구성 회고](https://github.com/user-attachments/assets/eb8ad758-6d26-4ada-9b9d-72a2db872106)
+
+경로나 어플리케이션을 분리하는 것이 더 관리에도 용이하고 코드 용량도 적어서, 구현에 적합하지 않않나 하는 생각이 듭니다.    
+
+### CSS-in-js vs CSS
+
+`인강헬퍼`를 시작하기 전, CSS와 CSS-in-js 중 어느 방식을 사용할 지에 대한 고민을 했습니다. 각자 장단점은 있었지만, DX보다 성능이나 생산성을 중요하다고 생각하기 때문에 속도가 중점이었습니다.
+전에 사용했던 styled-component(CSS-in-js)와 Sass Modules + classnames(lib)를 사용해보았는데, css-module 쪽이 더 빨랐습니다.   
+
+react의 컴포넌트 컨셉에는 CSS-in-js의 방식이 맞다는 생각이 들었지만, 당시에는 css-module이 속도에서 큰 차이가 있었습니다.
+결국, sass-module + classnames로 스타일링을 선택했고 결과적으로 좋은 선택이었습니다.   
+
+개인적으로는 3D나 2D 인터랙션도 좋아했기 때문에, 느려지기 쉬운 인터랙션의 페인팅 속도를 줄이는 데에도 중요했다고 생각하고 있습니다.
+
+### 유저 반응
+
+기획에도 관여하면서 생각보다 다양한 유저의 반응에 많은 고민을 했었습니다. 읽는 방향, 이미지와 텍스트 등 많지 않은 유저 중에도 성향이 각기 달라 화면 구성에 대한 고민도 많았습니다. 특정 화면은 모두 구현했지만, 갈아엎고 새로 만든 경우가 많았던 것 같습니다.   
+여러 경험 가운데 확실한 것은 사용자의 목적 중심의 개발이 중요하다는 점이었습니다. 즉 개발진이 어떤 이유나 문제로 구현을 진행하더라도, 결국 목적을 달성하는 일이 빠르고 편해야한다는 단순함이 중요하다는 것을 느꼈습니다.   
+생각해보면, KakaoTalk이나 KakaoBank, Naver, Toss 등 많은 테크 기업들은 그렇게 기획/디자인 했던 것 같습니다. 특히, 초창기에 KakaoBank를 만드셨던 분들은 이 점을 잘 이해하고 계셨던 것이 아닐까 하는 생각이 듭니다.   
+새로운 시도가 성공하면 좋지만, 실패했을 때 아픈 것은 어쩔 수 없는 것 같습니다. 다음 프로젝트에서는 반드시 이러한 점을 뼈에 새겨 명심해야 할 것 같습니다.
